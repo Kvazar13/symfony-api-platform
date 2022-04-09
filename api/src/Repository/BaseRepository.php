@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace App\Repository;
 
+use Doctrine\DBAL\Exception; // Este es la nueva excepción
+use Doctrine\Persistence\ManagerRegistry; // Este es el nuevo ManagerRegistry
 use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\DBALException;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\Mapping\MappingException;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Persistence\ObjectRepository;
-use Symfony\Bridge\Doctrine\ManagerRegistry;
 
 abstract class BaseRepository
 {
