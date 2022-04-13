@@ -30,7 +30,7 @@ class ChangePasswordService
     {
         $user = $this->userRepository->findOneById($userId);
 
-        if (! $this->encoderService->isValidPassword($user, $oldPassword) ) {
+        if (!$this->encoderService->isValidPassword($user, $oldPassword)) {
             throw PasswordException::oldPasswordDoesNotMatch();
         }
 

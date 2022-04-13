@@ -17,5 +17,4 @@ class PasswordException extends BadRequestHttpException
     {
         throw new self('Old password does not match');
     }
-
 }
