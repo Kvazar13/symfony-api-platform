@@ -33,6 +33,21 @@ class TestBase extends WebTestCase
                 ]
             );
         }
+
+        if (null === self::$peter) {
+            self::$peter = clone self::$client;
+            $this->createAuthenticatedUser(self::$peter, 'peter@api.com');
+        }
+
+        if (null === self::$brian) {
+            self::$brian = clone self::$client;
+            $this->createAuthenticatedUser(self::$brian, 'brian@api.com');
+        }
+
+        if (null === self::$roger) {
+            self::$roger = clone self::$client;
+            $this->createAuthenticatedUser(self::$roger, 'roger@api.com');
+        }
     }
 
     private function createAuthenticatedUser(KernelBrowser &$client, string $email): void

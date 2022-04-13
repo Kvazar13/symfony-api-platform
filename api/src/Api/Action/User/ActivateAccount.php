@@ -19,9 +19,7 @@ class ActivateAccount
     }
 
     /**
-     * @param Request $request
      * @param $id
-     * @return User
      */
     public function __invoke(Request $request, $id): User
     {
